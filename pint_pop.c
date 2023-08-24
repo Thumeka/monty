@@ -35,6 +35,7 @@ void _pop(stack_t **head, unsigned int line_number)
  * m_mod - mod element
  * @stack: elements
  * @line_number: byte codes
+ * Return: void
  */
 void m_mod(stack_t **stack, unsigned int line_number)
 {
@@ -42,13 +43,15 @@ void m_mod(stack_t **stack, unsigned int line_number)
 
 	if (!stack || !*stack || !((*stack)->next))
 	{
-		fprintf(stderr, "L%u: can't mod, stack too short\n", line_number);
+		fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
+		return;
 	}
 	if (((*stack)->n) == 0)
 	{
-		fprintf(stderr, "L%u: division by zero\n", line_number);
+		fprintf(stderr, "L%d: division by zero\n", line_number);
 		exit(EXIT_FAILURE);
+		return;
 	}
 
 	temp = ((*stack)->next->n) % ((*stack)->n);
