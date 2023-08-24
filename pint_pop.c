@@ -31,3 +31,28 @@ void _pop(stack_t **head, unsigned int line_number)
 	else
 		delete_dnodeint_at_end(head);
 }
+/**
+ * m_mod - mod element
+ * @stack: elements
+ * @line_number: byte codes
+ */
+void m_mod(stack_t **stack, unsigned int line_number)
+{
+	if (stack == NULL || *stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	if ((*stack)->n == 0 || (*stack)->next->n == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	(*stack)->next->n %= (*stack)->n;
+	(*stack) = (*stack)->next;
+	free((*stack)->prev);
+	(*stack)->prev = NULL;
+}
+	
+
