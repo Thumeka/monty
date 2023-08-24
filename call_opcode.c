@@ -12,6 +12,8 @@ void (*call_opc(char *opc))(stack_t **stack, unsigned int line_number)
 	instruction_t opc_d[] = {
 		{"pall", _pall},
 		{"pint", _pint},
+		{"pchar", _pchar},
+		{"pstr", _pstr},
 		{"pop", _pop},
 		{"swap", _swap},
 		{"add", _add},
