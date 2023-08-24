@@ -55,3 +55,50 @@ void m_mod(stack_t **stack, unsigned int line_number)
 	_pop(stack, line_number);
 	(*stack)->n = temp;
 }
+/**
+ * _rotl - to rotate elements
+ * @stack: elements
+ * @line_number: byte codes
+ */
+void _rotl(stack_t **stack, unsigned int line_number)
+{
+	stack_t *stk;
+
+	(void) line_number;
+
+	if ((*stack)->next != NULL)
+	{
+		stk = *stack;
+
+		while (stk->next != NULL)
+			stk = stk->next;
+		(*stack)->prev = stk;
+		stk->next = *stack;
+		(*stack)->next->prev = NULL;
+		*stack = (*stack)->next;
+		stk->next->next = NULL;
+	}
+}
+/**
+ * _rotr - rotate only bottom
+ * @stack: element
+ * @line_number: node
+ */
+void _rotr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *stk;
+
+	(void) line_number;
+
+	if ((*stack)->next != NULL)
+	{
+		stk = *stack;
+		while(stk->next != NULL)
+			stk = stk->next;
+		(*stack)->prev = stk;
+		stk->next = *stack;
+		stk->prev->next = NULL;
+		stk->prev = NULL;
+		(*stack) = (*stack)->prev;
+	}
+}
