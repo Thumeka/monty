@@ -16,6 +16,8 @@ void (*call_opc(char *opc))(stack_t **stack, unsigned int line_number)
 		{"swap", _swap},
 		{"add", _add},
 		{"nop", nop},
+		{"div", m_div},
+		{"sub", sub},
 		{NULL, NULL}
 	};
 	int j = 0;
