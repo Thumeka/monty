@@ -93,7 +93,7 @@ void _rotr(stack_t **stack, unsigned int line_number)
 	if ((*stack)->next != NULL)
 	{
 		stk = *stack;
-		while(stk->next != NULL)
+		while (stk->next != NULL)
 			stk = stk->next;
 		(*stack)->prev = stk;
 		stk->next = *stack;

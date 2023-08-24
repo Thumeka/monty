@@ -7,7 +7,7 @@
  * @n: number integer
  */
 
-void _push(stack_t **head, unsigned int line_number,const char *n)
+void _push(stack_t **head, unsigned int line_number, const char *n)
 {
 	if (!head)
 		return;
