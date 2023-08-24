@@ -11,7 +11,7 @@ void _push(stack_t **head, unsigned int line_number, const char *n)
 {
 	if (!head)
 		return;
-	if (!is_integer(n))
+	if (is_integer(n) == -1)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		free_link(head);
