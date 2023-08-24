@@ -46,7 +46,7 @@ void free_link(stack_t **head);
 void delete_dnodeint_at_end(stack_t **head);
 int add_dnodeint_end(stack_t **head, int n);
 int main(int argc, char *argv[]);
-void _nop(stack_t **head, unsigned int line_number);
+void nop(stack_t **head, unsigned int line_number);
 void _pop(stack_t **head, unsigned int line_number);
 void _pall(stack_t **head, unsigned int line_number);
 void _pint(stack_t **head, unsigned int line_number);
