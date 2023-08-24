@@ -89,3 +89,20 @@ void m_div(stack_t **stack, unsigned int line_number)
 	free((*stack)->prev);
 	(*stack)->prev = NULL;
 }
+/**
+ * m_mul - multiply the elements
+ * @stack: elements
+ * @line_number: input
+ */
+void m_mul(stack_t **stack, unsigned int line_number)
+{
+	if (*stack == NULL || (*stack)->next == NULL)
+	{
+		fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	(*stack)->next->n /= (*stack)->n;
+	(*stack) = (*stack)->next;
+	free((*stack)->prev);
+	(*stack)->prev = NULL;
+}

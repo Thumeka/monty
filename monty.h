@@ -54,6 +54,7 @@ void _swap(stack_t **head, unsigned int line_number);
 void _add(stack_t **head, unsigned int line_number);
 void sub(stack_t **stack, unsigned int line_number);
 void m_div(stack_t **stack, unsigned int line_number);
+void m_mul(stack_t **stack, unsigned int line_number);
 void _push(stack_t **head, unsigned int line_number, const char *n);
 int is_integer(const char *n);
 
