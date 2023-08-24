@@ -5,10 +5,8 @@
  * @head: header
  * @line_number: bytecode input
  */
-void nop(stack_t **head, unsigned int line_number)
+void nop(stack_t **stack, unsigned int line_number)
 {
-	(void) head;
+	(void) stack;
 	(void) line_number;
-
-	printf("Executing nop instruction\n");
 }
