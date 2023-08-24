@@ -17,14 +17,14 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		printf("USAGE: monty file\n");
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	file_d = open(argv[1], O_RDONLY);
 
 	if (file_d == -1)
 	{
-		printf("Error: Can't open file %s\n", argv[1]);
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 	buff = malloc(sizeof(char) * 10000);
@@ -35,6 +35,7 @@ int main(int argc, char *argv[])
 	{
 		free(buff);
 		close(file_d);
+		fprintf(stderr, "Read error\n");
 		exit(EXIT_FAILURE);
 	}
 	tok = strtok(buff, "\n\t\a\r ;:");
@@ -63,7 +64,7 @@ int main(int argc, char *argv[])
 			else
 			{
 				free_link(&head);
-				printf("L%d: unknown instruction %s\n", line, tok);
+				fprintf(stderr, "L%d: unknown instruction %s\n", line, tok);
 				exit(EXIT_FAILURE);
 			}
 		}
