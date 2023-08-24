@@ -69,7 +69,7 @@ void sub(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * div - divide the elements
+ *m_div - divide the elements
  * @stack: stacks
  * @line_number: the input
  */
@@ -89,4 +89,3 @@ void m_div(stack_t **stack, unsigned int line_number)
 	free((*stack)->prev);
 	(*stack)->prev = NULL;
 }
-	
