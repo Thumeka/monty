@@ -9,7 +9,8 @@
  */
 int main(int argc, char *argv[])
 {
-	int psh, file_d = 0;
+	int psh = 0;
+	int file_d = 0;
 	ssize_t read_n;
 	char *buff, *tok;
 	stack_t *head = NULL;
