@@ -11,9 +11,9 @@ void _push(stack_t **head, unsigned int line_number, const char *n)
 {
 	if (!head)
 		return;
-	if (is_integer(n) == -1)
+	if (!is_integer(n))
 	{
-		fprintf(stderr, "L%u: usage: push integer\n", line_number);
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		free_link(head);
 		exit(EXIT_FAILURE);
 	}
@@ -54,13 +54,9 @@ int is_integer(const char *n)
  */
 void _pall(stack_t **head, unsigned int line_number)
 {
-	stack_t *temp = NULL;
+	stack_t *temp = *head;
 
-	if (!head || !*head)
-		return;
 	(void) line_number;
-
-	temp = *head;
 
 	while (temp != NULL)
 	{
