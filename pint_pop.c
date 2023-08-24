@@ -24,7 +24,7 @@ void _pop(stack_t **head, unsigned int line_number)
 {
 	if (head == NULL || *head == NULL)
 	{
-		printf("L%u: can't pop an empty stack\n", line_number);
+		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
 		free_link(head);
 		exit(EXIT_FAILURE);
 	}
