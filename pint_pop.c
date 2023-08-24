@@ -65,22 +65,21 @@ void m_mod(stack_t **stack, unsigned int line_number)
  */
 void _rotl(stack_t **stack, unsigned int line_number)
 {
-	stack_t *stk;
 	stack_t *under;
 
 	(void) line_number;
 
-	if (!stack || !*stack || !(*stack)->next)
+	if ((*stack)->next != NULL)
 	{
-		under = stk = *stack;
+		under = *stack;
 
-		while (under->next)
+		while (under->next != NULL)
 			under = under->next;
-		under->next = stk;
-		stk->prev = under;
-		*stack = stk->next;
-		(*stack)->prev->next = NULL;
-		(*stack)->prev = NULL;
+		(*stack)->prev = under;
+		under->next = *stack;
+		(*stack)->next->prev = NULL;
+		*stack = (*stack)->next;
+		under->next->next = NULL;
 	}
 }
 /**
