@@ -13,7 +13,7 @@ void _push(stack_t **head, unsigned int line_number, const char *n)
 		return;
 	if (is_integer(n) == -1)
 	{
-		printf("L%u: usage: push integer\n", line_number);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		free_link(head);
 		exit(EXIT_FAILURE);
 	}
