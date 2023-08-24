@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * _nop - do nothing
+ * nop - do nothing
  * @head: header
  * @line_number: bytecode input
  */
