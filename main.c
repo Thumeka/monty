@@ -41,6 +41,13 @@ int main(int argc, char *argv[])
 	tok = strtok(buff, "\n\t\a\r ;:");
 	while (tok != NULL)
 	{
+		if (tok[0] == '#')
+		{
+			tok = strtok(NULL, "\n\t\a\r ;:");
+			line++;
+			continue;
+		}
+
 		if (psh == 1)
 		{
 			_push(&head, line, tok);
