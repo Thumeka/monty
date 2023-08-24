@@ -74,7 +74,7 @@ void _rotl(stack_t **stack, unsigned int line_number)
 	{
 		under = stk = *stack;
 
-		while (stk->next != NULL)
+		while (under->next)
 			under = under->next;
 		under->next = stk;
 		stk->prev = under;
